@@ -1,0 +1,14 @@
+.option {
+  background-color: rgb(141, 141, 248);
+  margin: 20px;
+}
+
+.correct {
+  background-color: green;
+  font-weight: bold;
+}
+
+.wrong {
+  background-color: red;
+  opacity: 0.4;
+}
