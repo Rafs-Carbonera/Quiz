@@ -1,14 +1,19 @@
 .option {
-  background-color: rgb(141, 141, 248);
-  margin: 20px;
+  background-color: #00adb5;
+  padding: 10px;
+  margin-block: 20px;
+  border-radius: 8px;
+  color: #eeeeee;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .correct {
-  background-color: green;
+  background-color: #40da5f;
   font-weight: bold;
 }
 
 .wrong {
-  background-color: red;
+  background-color: #e43d3d;
   opacity: 0.4;
 }

@@ -21,7 +21,7 @@ const quizReducer = (state, action) => {
       };
 
     case "REORDER_QUESTIONS":
-      const reorderedQuestions = questions.sort(() => {
+      const reorderedQuestions = state.questions.sort(() => {
         return Math.random() - 0.5;
       });
 
@@ -30,11 +30,31 @@ const quizReducer = (state, action) => {
         questions: reorderedQuestions,
       };
 
+    case "REORDER_OPTIONS":
+      const currentQuestion = state.questions[state.currentQuestion];
+      const optionsCopy = [...currentQuestion.options];
+      const reorderedOptions = optionsCopy.sort(() => Math.random() - 0.5);
+
+      const updatedQuestions = state.questions.map((question, index) => {
+        if (index === state.currentQuestion) {
+          return {
+            ...question,
+            options: reorderedOptions,
+          };
+        }
+        return question;
+      });
+
+      return {
+        ...state,
+        questions: updatedQuestions,
+      };
+
     case "CHANGE_QUESTION":
       const nextQuestion = state.currentQuestion + 1;
       let endGame = false;
 
-      if (!questions[nextQuestion]) {
+      if (!state.questions[nextQuestion]) {
         endGame = true;
       }
 
@@ -55,7 +75,9 @@ const quizReducer = (state, action) => {
       const option = action.payload.option;
       let correctAnswer = 0;
 
-      if (answer === option) correctAnswer = 1;
+      if (answer === option) {
+        correctAnswer = 1;
+      }
 
       return {
         ...state,

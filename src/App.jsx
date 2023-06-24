@@ -12,11 +12,13 @@ function App() {
   useEffect(() => {
     dispatch({ type: "REORDER_QUESTIONS" });
     //embaralhar perguntas
+    dispatch({ type: "REORDER_OPTIONS" });
   }, []);
 
   return (
     <div className="app">
-      <h1>Quiz de Programação</h1>
+      <h1>Quiz</h1>
+
       {quizState.gameStage === "Start" && <Welcome />}
       {quizState.gameStage === "Playing" && <Question />}
       {quizState.gameStage === "End" && <EndGame />}

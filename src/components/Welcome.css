@@ -1,0 +1,13 @@
+#welcome {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.start {
+  font-size: 1.25rem;
+  padding: 10px 25px;
+}

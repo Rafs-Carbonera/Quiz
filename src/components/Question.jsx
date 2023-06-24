@@ -21,8 +21,8 @@ const Question = () => {
         {" "}
         Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}{" "}
       </p>
-      <h2>{currentQuestion.question}</h2>
-      <div id="options-container">
+      <h2 className="pergunta">{currentQuestion.question}</h2>
+      <div className="opcoes" id="options-container">
         {currentQuestion.options.map((option) => (
           <Option
             option={option}
@@ -33,7 +33,10 @@ const Question = () => {
         ))}
       </div>
       {quizState.answerSelected && (
-        <button onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
+        <button
+          className="next"
+          onClick={() => dispatch({ type: "CHANGE_QUESTION" })}
+        >
           Continuar
         </button>
       )}

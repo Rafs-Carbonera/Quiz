@@ -1,0 +1,26 @@
+#question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+@media (min-width: 700px) {
+  #question {
+    width: 50%;
+  }
+}
+.pergunta {
+  margin-block: 10px 20px;
+}
+
+.opcoes {
+  width: 80%;
+}
+
+.next {
+  font-size: 1.25rem;
+  margin-top: 20px;
+  padding: 10px 25px;
+}

@@ -14,7 +14,12 @@ const EndGame = () => {
         Você acertou {quizState.score} de {quizState.questions.length}{" "}
         perguntas.
       </p>
-      <button onClick={() => dispatch({ type: "NEW_GAME" })}>Reiniciar</button>
+      <button
+        className="end-game-button"
+        onClick={() => dispatch({ type: "NEW_GAME" })}
+      >
+        Reiniciar
+      </button>
     </div>
   );
 };
